@@ -6,7 +6,8 @@
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="21" android:maxSdkVersion="23"/>
+        android:targetSdkVersion="21" android:maxSdkVersion="23" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"

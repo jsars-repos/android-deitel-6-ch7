@@ -8,6 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ve.com.josearias.MainActivity" >
 
-  
+	<include layout="@layout/content_main"/>
 
 </RelativeLayout>
