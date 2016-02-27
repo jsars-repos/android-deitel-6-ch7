@@ -45,8 +45,9 @@ public class WeatherArrayAdapter extends ArrayAdapter<Weather>
 		ViewHolder viewHolder; 
 		
 		if (convertView == null) 
-		{ // no reusable ViewHolder, so create one
+		{ 
 
+			viewHolder = new ViewHolder();
 			LayoutInflater inflater = LayoutInflater.from(getContext());
 			convertView =
 					inflater.inflate(R.layout.list_item, parent, false);
@@ -57,7 +58,7 @@ public class WeatherArrayAdapter extends ArrayAdapter<Weather>
 			viewHolder.lowTextView =
 					(TextView) convertView.findViewById(R.id.lowTextView);
 			viewHolder.hiTextView =
-					(TextView) convertView.findViewById(R.id.hiTextView);
+					(TextView) convertView.findViewById(R.id.highTextView);
 			viewHolder.humidityTextView =
 					(TextView) convertView.findViewById(R.id.humidityTextView);
 
@@ -67,8 +68,7 @@ public class WeatherArrayAdapter extends ArrayAdapter<Weather>
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		// if weather condition icon already downloaded, use it;
-		// otherwise, download icon in a separate thread
+
 		if (bitmaps.containsKey(day.iconURL)) 
 		{
 			viewHolder.conditionImageView.setImageBitmap(
@@ -80,8 +80,8 @@ public class WeatherArrayAdapter extends ArrayAdapter<Weather>
 					day.iconURL);
 		}
 
-		// get other data from Weather object and place into views
-		Context context = getContext(); // for loading String resources
+
+		Context context = getContext(); 
 		viewHolder.dayTextView.setText(context.getString(
 				R.string.day_description, day.dayOfWeek, day.description));
 		viewHolder.lowTextView.setText(
@@ -92,5 +92,5 @@ public class WeatherArrayAdapter extends ArrayAdapter<Weather>
 				context.getString(R.string.humidity, day.humidity));
 
 		return convertView; // return completed list item to display
-
 	}
+}

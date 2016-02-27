@@ -30,7 +30,7 @@ class LoadImageTask extends AsyncTask<String, Void, Bitmap>
 	
 	 try 
 	 {
-		 URL url = new URL(params[0]); // create URL for image
+		 URL url = new URL(params[0]); 
 		
 		 // open an HttpURLConnection, get its InputStream
 		 // and download the image
