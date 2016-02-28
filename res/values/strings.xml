@@ -15,6 +15,7 @@
 	<string name="hint_text">Enter city (e.g. Boston, MA, US)</string>
 	<string name="read_error">Unable to read weather data</string>
 	<string name="connect_error">Unablle to connect to OpenWeather.org</string>
+	<string name="get_forecast">Get forecast</string>
 	
 	
 </resources>
